@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Env
+.env
+.envrc
+
+# OS/editor cruft
+.DS_Store
+.vscode/
+.idea/
+
+# Builds
+dist/
+build/
+.eggs/
+*.egg-info/

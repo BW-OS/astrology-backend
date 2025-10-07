@@ -1,0 +1,6 @@
+# Copy to .envrc then run: direnv allow
+export VEDASTRO_API_KEY=your_key_here
+# Optional:
+export OPENAI_API_KEY=your_openai_key_here
+export SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+export SUPABASE_ANON_KEY=YOUR_ANON_KEY

@@ -1,0 +1,10 @@
+kerykeion
+pyswisseph
+pytz
+timezonefinder
+python-dateutil
+lunar-python
+httpx
+fastapi
+uvicorn
+supabase

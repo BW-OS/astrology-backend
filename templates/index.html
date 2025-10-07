@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astrology Natal Form</title>
+</head>
+<body>
+  <h1>Astrology Natal Form</h1>
+  <form action="/natal" method="post">
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" required /><br />
+    <label for="year">Year:</label><br />
+    <input type="number" id="year" name="year" required /><br />
+    <label for="month">Month:</label><br />
+    <input type="number" id="month" name="month" required min="1" max="12" /><br />
+    <label for="day">Day:</label><br />
+    <input type="number" id="day" name="day" required min="1" max="31" /><br />
+    <label for="hour">Hour:</label><br />
+    <input type="number" id="hour" name="hour" min="0" max="23" value="12" /><br />
+    <label for="minute">Minute:</label><br />
+    <input type="number" id="minute" name="minute" min="0" max="59" value="0" /><br />
+    <label for="second">Second:</label><br />
+    <input type="number" id="second" name="second" min="0" max="59" value="0" /><br />
+    <label for="gender">Gender (1=male, 0=female):</label><br />
+    <input type="number" id="gender" name="gender" min="0" max="1" value="1" /><br /><br />
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

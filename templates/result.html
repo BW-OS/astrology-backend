@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astrology Natal Result</title>
+</head>
+<body>
+  <h1>Astrology Natal Result</h1>
+  <div>
+    <p>Name: {{ name }}</p>
+    <p>Year: {{ year }}</p>
+    <p>Month: {{ month }}</p>
+    <p>Day: {{ day }}</p>
+    <p>Hour: {{ hour }}</p>
+    <p>Minute: {{ minute }}</p>
+    <p>Second: {{ second }}</p>
+    <p>Gender: {{ gender }}</p>
+  </div>
+  <div>
+    <h2>Result</h2>
+    <pre>{{ result | tojson(indent=2) }}</pre>
+  </div>
+  <a href="/">Back to form</a>
+</body>
+</html>

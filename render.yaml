@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: astrology-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: VEDASTRO_API_KEY
+        sync: false
