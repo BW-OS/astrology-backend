@@ -1,23 +1,14 @@
-PY=python3
-VENV=.venv
-ACT=source $(VENV)/bin/activate
-
-.PHONY: venv dev tunnel test clean
+SHELL := /bin/bash
 
 venv:
-	$(PY) -m venv $(VENV); \
-	$(ACT); \
-	pip install --upgrade pip wheel setuptools; \
-	pip install -r requirements.txt
+	python3 -m venv venv
+	. venv/bin/activate && pip install -r requirements.txt
 
 dev:
-	$(ACT); uvicorn app:app --reload
+	. venv/bin/activate && uvicorn app:app --reload
 
 tunnel:
-	cloudflared tunnel --url http://localhost:8000
+	# Add your tunnel command here, e.g., ngrok http 8000
 
 test:
-	$(ACT); $(PY) -c "import kerykeion,lunar_python,fastapi,httpx; print('OK')"
-
-clean:
-	rm -rf $(VENV) __pycache__ .pytest_cache
+	. venv/bin/activate && pytest

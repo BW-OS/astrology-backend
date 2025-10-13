@@ -8,3 +8,5 @@ httpx
 fastapi
 uvicorn
 supabase
+jinja2
+python-multipart

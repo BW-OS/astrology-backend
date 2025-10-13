@@ -5,6 +5,7 @@ from kerykeion import AstrologicalSubject
 from lunar_python import Solar
 
 
+
 app = FastAPI(title="Astrology Backend")
 
 # ---------- Western ----------
@@ -15,6 +16,22 @@ def western(lat: float = Query(...), lng: float = Query(...)):
         lng=lng, lat=lat, tz_str="America/New_York"
     )
     return {"sun_sign": person.sun.get("sign", "Unknown")}
+
+# ---------- Health check ----------
+@app.get("/health")
+async def health_check():
+    return {"ok": True}
+
+# ---------- Version ----------
+import subprocess
+
+@app.get("/version")
+async def version():
+    try:
+        commit_hash = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode().strip()
+        return {"version": commit_hash}
+    except Exception:
+        return {"version": "dev"}
 
 # ---------- BaZi ----------
 @app.get("/bazi")
